@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #eee;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    /* xác định số lượng cột và kích thước chiều rộng của từng cột trong lưới.
+    repeat(3, 60px): nghĩa là lặp lại 3 lần, mỗi lần là 60px. */
+    grid-template-rows: repeat(3, 80px);
+    border: 3px solid #242222;
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #999;
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    /* Sử dụng flexbox để căn giữa chữ */
+    align-items: center;
+    justify-content: center;
+}
+
+.square:hover,
+#reset:hover {
+    background-color: #ccc;
+}
+
+/* Style cho X */
+.x-mark {
+    color: #d32f2f;
+}
+
+.o-mark {
+    color: #1976d2;
+}
+
+#reset {
+    width: 100px;
+    height: 50px;
+    margin-top: 15%;
+    background: #999;
+    border: none;
+    cursor: pointer;
+}
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
