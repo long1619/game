@@ -6,8 +6,8 @@ let countdownInterval; // lưu ID của setInterval
 
 // Tạo ra bàn cờ
 function createBoard() {
-    for (let i = 0; i <= 2; i++) {
-        for (let j = 0; j <= 2; j++) {
+    for (let i = 1; i <= 3; i++) {
+        for (let j = 1; j <= 3; j++) {
             const square = document.createElement('div'); // Create a new div element for each square
             square.classList.add('square'); // Add the 'square' class to the div
             square.addEventListener('click', handleClick); // Thêm event listener trực tiếp

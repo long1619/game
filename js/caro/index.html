@@ -4,21 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <title>Caro</title>
+    <link rel="icon" type="image/x-icon" href="./img/avatar caro.png">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<link rel="stylesheet" href="css/style.css">
 
 <body>
-    <div class="wrap">
-        <div id="timer">30</div>
+    <div class="img-caro">
+        <img src="./img/avatar caro.png" alt="image" class="img-background">
 
-        <div class="board" id="board">
+        <div class="button-play">
+            <button id="play">Play</button>
         </div>
-        <button id="reset">Reset</button>
-
     </div>
 
 </body>
-<script src="js/script.js"></script>
+
+<script>
+    document.getElementById('play').addEventListener('click', function () {
+        localStorage.setItem('audioShouldPlay', 'true'); // ✅ Lưu cờ phát nhạc
+        window.location.href = 'choose_mode_game.html'; // Chuyển đến trang game
+    });
+</script>
 
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chọn Chế Độ Chơi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            overflow: hidden;
+            /* Ẩn thanh cuộn */
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            color: #ff6f00;
+            text-shadow: 2px 2px #fff;
+            margin-bottom: 20px;
+        }
+
+        .mode-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mode-button {
+            width: 160px;
+            height: 160px;
+            background-color: #2196f3;
+            color: white;
+            font-size: 1.8rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mode-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+            background-color: #1976d2;
+        }
+
+        .grid-icon {
+            width: 48px;
+            height: 48px;
+            margin-top: 8px;
+            background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 60 60">\<rect width="10" height="10" fill="white" x="0" y="0"/><rect width="10" height="10" fill="white" x="20" y="0"/><rect width="10" height="10" fill="white" x="40" y="0"/>\<rect width="10" height="10" fill="white" x="0" y="20"/><rect width="10" height="10" fill="white" x="20" y="20"/><rect width="10" height="10" fill="white" x="40" y="20"/>\<rect width="10" height="10" fill="white" x="0" y="40"/><rect width="10" height="10" fill="white" x="20" y="40"/><rect width="10" height="10" fill="white" x="40" y="40"/>\</svg>');
+            background-size: cover;
+            margin-left: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="bg-music" src="./audio/intro.mp3" preload="auto" loop></audio>
+    <!-- Nút điều khiển âm thanh -->
+    <button id="mute-btn"></button>
+
+    <div class="title">Chọn Chế Độ Chơi</div>
+    <div class="mode-container">
+        <button class="mode-button" onclick="selectMode(3)">3x3<div class="grid-icon"></div></button>
+        <button class="mode-button" onclick="selectMode(5)">5x5<div class="grid-icon"></div></button>
+        <button class="mode-button" onclick="selectMode(7)">7x7<div class="grid-icon"></div></button>
+    </div>
+
+    <script>
+        function selectMode(size) {
+            localStorage.setItem('boardSize', size);
+            window.location.href = 'caro.html';
+            localStorage.removeItem('audioShouldPlay');
+        }
+    </script>
+<script src="js/caro_index.js"></script>
+
+</body>
+
+</html>
